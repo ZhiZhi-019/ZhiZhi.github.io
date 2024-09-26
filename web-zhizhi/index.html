@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x-zhizhi</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 1; /* 确保下拉菜单在其他元素之上 */
+        }
+        .avatar {
+            cursor: pointer;
+            display: inline-block;
+            position: relative; /* 使下拉菜单相对位置 */
+        }
+    </style>
+
+</head>
+<body>
+    <div class="background">
+        <div class="navbar">
+            <a href="#home">首页</a>
+            <a href="#news">新闻</a>
+            <a href="#message">留言板</a>
+            <a href="#music">音乐</a>
+        </div>
+        <div class="main-content">
+            <div class="avatar"></div>
+            <div class="app-logos">
+                <a href="https://github.com/ZhiZhi-019"><img src="assets/github.png" alt="GitHub"></a>
+                <a href="https://space.bilibili.com/361743916?spm_id_from=333.1007.0.0"><img src="assets/bilibili.png" alt="Bilibili"></a>
+                <a href="https://x.com/x_zhizhi"><img src="assets/X2.png" alt="x"></a>
+            </div>
+
+            <div class="text-box">
+                <h1 id="dynamicText"></h1>
+            </div>
+
+            
+        </div>
+
+    </div>
+    <script>
+        const texts = [
+        "“无足鸟没有鸟足，只有翅膀。因此只能飞翔。当它落地之时，就意味着它的毁灭。” ",
+        "“人们总是害怕孤独，总要贪恋热闹的人群，总不愿无所事事。 因为当他们面对孤独，往往就会面对痛苦。但是一旦能直面这种痛苦，人就往往有了才华和勇气。所以。有句俗语——杰出者必孤独。”",
+        "“心胸浅薄之人，常会因为咒骂而愤怒，因为夸赞而喜悦。但其实这些都不过是旁人对你的看法罢了。因为旁人的看法，而活着的人，注定是可怜的人。”",
+        "“我们既然意识到自己的渺小，那就更应该变得强大。我们本来就是渺小的，只是从无知变得有知，你感到痛苦，是因为你在成长。”"
+        ];
+
+        let currentTextIndex = 0;
+
+        function changeText() {
+            const element = document.getElementById('dynamicText');
+            element.textContent = texts[currentTextIndex];
+            currentTextIndex = (currentTextIndex + 1) % texts.length;
+            setTimeout(changeText, 3300); 
+        }
+
+    
+
+        
+
+        changeText(); 
+    </script>
+</body>
+</html>
