@@ -1,0 +1,103 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* 定义关键帧动画 */
+@keyframes backgroundSwitcher {
+    0% {
+      background-image: url('assets/background1.png');
+    }
+    50% {
+      background-image: url('assets/background2.png');
+    }
+    100% {
+      background-image: url('assets/background1.png');
+    }
+  }
+
+.background {
+    top: 0;
+    left: 0;
+    width: 100%; /* 背景覆盖整个容器的宽度 */
+    height: 100vh; /* 背景覆盖整个容器的高度，视口高度 */
+    background-position: center; /* 背景图片居中显示 */
+    background-size: cover; /* 背景图片覆盖整个容器 */
+    background-attachment: fixed; /* 背景图片固定，不随滚动条滚动 */
+    animation: backgroundSwitcher 20s infinite;
+    
+}
+
+.navbar {
+    overflow: hidden;
+    background-color:transparent;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+   
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 水平居中 */
+    justify-content: center; /* 垂直居中 */
+    min-height: calc(100vh - 60px - 20px - 20px);
+    padding: 20px;
+    top: 60px;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: url('assets/touxiang2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 20px;
+}
+
+
+
+.text-box {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 40%;
+    margin: 10px auto;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.app-logos {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+.app-logos img {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+
+
+
+
